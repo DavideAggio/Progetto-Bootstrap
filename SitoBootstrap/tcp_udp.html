@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCP e UDP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="img/icon.png">  
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-plug"></i> Socket Guide
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="socket.html">Socket</a></li>
+                    <li class="nav-item"><a class="nav-link" href="osi.html">Modello OSI</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="tcp_udp.html">TCP/UDP</a></li>
+                    <li class="nav-item"><a class="nav-link" href="glossario.html">Glossario</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenuto -->
+    <div class="container my-5">
+        <h1>TCP e UDP</h1>
+
+        <!-- Introduzione -->
+        <div class="section">
+            <h2>Introduzione</h2>
+            <p>TCP (Transmission Control Protocol) e UDP (User Datagram Protocol) sono due protocolli fondamentali del livello di trasporto del modello OSI. Entrambi servono a trasmettere dati su una rete, ma lo fanno in modi molto diversi per soddisfare esigenze specifiche. Mentre il TCP si concentra su affidabilità e sequenzialità, l'UDP è progettato per velocità e semplicità.</p>
+            <p>Questi protocolli sono utilizzati in quasi tutte le applicazioni di rete, da siti web a giochi online, streaming, e molto altro.</p>
+        </div>
+
+        <!-- Sezione TCP -->
+        <div class="section">
+            <h2>TCP (Transmission Control Protocol)</h2>
+            <p>TCP è un protocollo orientato alla connessione che garantisce una comunicazione affidabile e sequenziale tra due dispositivi in rete.</p>
+
+            <h3>Caratteristiche principali di TCP</h3>
+            <ul>
+                <li><strong>Orientato alla connessione:</strong> Prima di trasmettere dati, TCP stabilisce una connessione tra i dispositivi usando un processo chiamato "Three-way Handshake".</li>
+                <li><strong>Affidabilità:</strong> TCP garantisce che i dati siano ricevuti correttamente e nell'ordine giusto. Eventuali pacchetti persi vengono ritrasmessi.</li>
+                <li><strong>Controllo del flusso:</strong> TCP regola la velocità di trasmissione per evitare sovraccarichi sul destinatario.</li>
+                <li><strong>Controllo della congestione:</strong> TCP adatta la velocità di trasmissione in base alle condizioni della rete.</li>
+            </ul>
+
+            <h3>Vantaggi di TCP</h3>
+            <ul>
+                <li>Trasmissione affidabile dei dati.</li>
+                <li>Ordine garantito dei pacchetti.</li>
+                <li>Adatto per applicazioni che richiedono precisione, come email, trasferimenti di file e navigazione web.</li>
+            </ul>
+
+            <h3>Svantaggi di TCP</h3>
+            <ul>
+                <li>Maggiore overhead rispetto a UDP, che può causare ritardi.</li>
+                <li>Non adatto per applicazioni in tempo reale come streaming o giochi online.</li>
+            </ul>
+
+            <p>Fonti: <a href="https://www.geeksforgeeks.org/tcp/" target="_blank">GeeksforGeeks - TCP</a>, <a href="https://www.ibm.com/docs/en/aix/7.2?topic=concepts-tcpip" target="_blank">IBM - TCP Protocol</a>.</p>
+        </div>
+
+        <!-- Sezione UDP -->
+        <div class="section">
+            <h2>UDP (User Datagram Protocol)</h2>
+            <p>UDP è un protocollo senza connessione, progettato per essere leggero e veloce. A differenza di TCP, non garantisce che i pacchetti arrivino o siano in ordine.</p>
+
+            <h3>Caratteristiche principali di UDP</h3>
+            <ul>
+                <li><strong>Senza connessione:</strong> UDP non stabilisce una connessione prima di inviare i dati, il che lo rende più rapido.</li>
+                <li><strong>Non affidabile:</strong> I pacchetti persi non vengono ritrasmessi, e l'ordine non è garantito.</li>
+                <li><strong>Leggerezza:</strong> L'header di UDP è molto più semplice rispetto a TCP, riducendo il carico sulla rete.</li>
+            </ul>
+
+            <h3>Vantaggi di UDP</h3>
+            <ul>
+                <li>Ideale per applicazioni in tempo reale come giochi online, VoIP e streaming video.</li>
+                <li>Minimo overhead, con trasmissione rapida dei pacchetti.</li>
+            </ul>
+
+            <h3>Svantaggi di UDP</h3>
+            <ul>
+                <li>Nessuna garanzia di affidabilità o ordine.</li>
+                <li>Non adatto per applicazioni che richiedono precisione, come email o trasferimenti di file.</li>
+            </ul>
+
+            <p>Fonti: <a href="https://www.geeksforgeeks.org/udp/" target="_blank">GeeksforGeeks - UDP</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/UDPSocket" target="_blank">MDN - UDP Socket</a>.</p>
+        </div>
+
+        <!-- Confronto tra TCP e UDP -->
+        <div class="section">
+            <h2>Confronto tra TCP e UDP</h2>
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th>Caratteristica</th>
+                        <th>TCP</th>
+                        <th>UDP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tipo di protocollo</td>
+                        <td>Orientato alla connessione</td>
+                        <td>Senza connessione</td>
+                    </tr>
+                    <tr>
+                        <td>Affidabilità</td>
+                        <td>Affidabile</td>
+                        <td>Non affidabile</td>
+                    </tr>
+                    <tr>
+                        <td>Velocità</td>
+                        <td>Più lento</td>
+                        <td>Più veloce</td>
+                    </tr>
+                    <tr>
+                        <td>Overhead</td>
+                        <td>Alto</td>
+                        <td>Basso</td>
+                    </tr>
+                    <tr>
+                        <td>Ordine dei dati</td>
+                        <td>Garantito</td>
+                        <td>Non garantito</td>
+                    </tr>
+                    <tr>
+                        <td>Applicazioni</td>
+                        <td>Web, email, FTP</td>
+                        <td>Streaming, VoIP, giochi online</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Conclusioni -->
+        <div class="section">
+            <h2>Conclusioni</h2>
+            <p>TCP e UDP sono entrambi essenziali nel mondo delle reti. La scelta tra i due dipende dalle esigenze dell'applicazione: TCP è perfetto per la precisione e l'affidabilità, mentre UDP eccelle in velocità e semplicità. Comprendere questi protocolli è fondamentale per progettare sistemi di rete efficienti.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Davide Aggio - Classe 5F</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

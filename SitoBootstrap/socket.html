@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="img/icon.png">  
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-plug"></i> Socket Guide
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="socket.html">Socket</a></li>
+                    <li class="nav-item"><a class="nav-link" href="osi.html">Modello OSI</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tcp_udp.html">TCP/UDP</a></li>
+                    <li class="nav-item"><a class="nav-link" href="glossario.html">Glossario</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenuto -->
+    <div class="container my-5">
+        <h1>Socket</h1>
+
+        <!-- Sezione: Cos'è una socket? -->
+        <div class="section">
+            <h2>Cos'è una socket?</h2>
+            <p>Una socket è un'interfaccia software utilizzata per consentire la comunicazione tra dispositivi in rete. In termini semplici, una socket funge da punto finale per una connessione, consentendo a due applicazioni di comunicare inviando e ricevendo dati.</p>
+            <p>Le socket sono utilizzate sia nelle comunicazioni locali, tra processi sullo stesso computer, sia nelle comunicazioni di rete, tra dispositivi separati connessi tramite internet o altre reti. Ogni socket è identificata univocamente da un indirizzo IP e da un numero di porta.</p>
+
+            <h3>Origine delle socket</h3>
+            <p>Il concetto di socket è nato negli anni '70 con il sistema operativo UNIX, che ha introdotto il modello client-server. Questo modello ha portato alla creazione di socket come astrazione per gestire le comunicazioni di rete.</p>
+
+            <h3>Perché sono importanti?</h3>
+            <p>Le socket sono fondamentali per molte applicazioni moderne, come browser web, client di posta elettronica, servizi di messaggistica e giochi online. Permettono la trasmissione di dati in modo standardizzato, indipendentemente dal tipo di rete o dal dispositivo utilizzato.</p>
+
+            <p>Fonti: <a href="https://www.geeksforgeeks.org/socket-programming-in-python/" target="_blank">GeeksforGeeks</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API" target="_blank">MDN Web Docs</a>.</p>
+        </div>
+
+        <!-- Sezione: Tipologie di socket -->
+        <div class="section">
+            <h2>Tipologie di socket</h2>
+            <p>Le socket possono essere classificate in base al tipo di protocollo e al modo in cui gestiscono la comunicazione. Le principali tipologie sono:</p>
+
+            <h3>1. Socket di tipo Stream (TCP)</h3>
+            <p>Queste socket utilizzano il protocollo TCP (Transmission Control Protocol), che garantisce una comunicazione affidabile e orientata alla connessione. Sono ideali per applicazioni che richiedono che i dati siano consegnati nell'ordine corretto e senza perdite.</p>
+            <ul>
+                <li><strong>Vantaggi:</strong> Trasmissione sicura, ordine garantito, ritrasmissione automatica in caso di errore.</li>
+                <li><strong>Usi comuni:</strong> Navigazione web, trasferimento di file, email.</li>
+            </ul>
+
+            <h3>2. Socket di tipo Datagram (UDP)</h3>
+            <p>Queste socket utilizzano il protocollo UDP (User Datagram Protocol), che è più veloce ma meno affidabile di TCP. Non garantiscono che i pacchetti arrivino in ordine o che vengano consegnati correttamente.</p>
+            <ul>
+                <li><strong>Vantaggi:</strong> Minore overhead, velocità superiore.</li>
+                <li><strong>Usi comuni:</strong> Streaming video, giochi online, VoIP.</li>
+            </ul>
+
+            <h3>3. Socket RAW</h3>
+            <p>Le socket RAW permettono un controllo diretto dei pacchetti, bypassando i protocolli standard come TCP e UDP. Sono utilizzate per scopi speciali, come l'implementazione di nuovi protocolli o l'analisi della rete.</p>
+            <ul>
+                <li><strong>Usi comuni:</strong> Analisi della rete, sviluppo di software di sicurezza.</li>
+            </ul>
+
+            <p>Fonti: <a href="https://www.ibm.com/docs/en/aix/7.2?topic=concepts-sockets" target="_blank">IBM - Sockets</a>, <a href="https://www.tutorialspoint.com/socket-programming-in-python" target="_blank">TutorialsPoint</a>.</p>
+        </div>
+
+        <!-- Sezione: Processo di comunicazione -->
+        <div class="section">
+            <h2>Processo di comunicazione (Server e Client)</h2>
+            <p>Il processo di comunicazione tramite socket segue una sequenza di passaggi ben definiti, che variano leggermente a seconda del protocollo utilizzato. Ecco una panoramica del flusso tipico:</p>
+
+            <h3>1. Creazione della socket</h3>
+            <p>Sia il client che il server iniziano creando una socket. Il server configura la sua socket in modalità "ascolto" (listening) per accettare connessioni in ingresso.</p>
+
+            <h3>2. Binding</h3>
+            <p>Il server associa la socket a un indirizzo IP e a una porta specifica. Questo passaggio è noto come binding.</p>
+
+            <h3>3. Connessione</h3>
+            <p>Il client invia una richiesta di connessione al server. Il server accetta la connessione e crea una nuova socket dedicata per gestire il client.</p>
+
+            <h3>4. Scambio di dati</h3>
+            <p>Una volta stabilita la connessione, i dati vengono trasmessi tra il client e il server. Questo avviene in modo bidirezionale, con l'utilizzo di buffer per gestire la trasmissione.</p>
+
+            <h3>5. Chiusura della connessione</h3>
+            <p>Quando la comunicazione è terminata, entrambe le parti chiudono la connessione per liberare le risorse. In TCP, questo avviene tramite un processo chiamato four-way handshake.</p>
+
+            <p>Fonti: <a href="https://docs.python.org/3/library/socket.html" target="_blank">Python Documentation</a>, <a href="https://www.geeksforgeeks.org/socket-programming-in-python/" target="_blank">GeeksforGeeks</a>.</p>
+        </div>
+
+        <!-- Sezione: Applicazioni reali -->
+        <div class="section">
+            <h2>Applicazioni reali delle socket</h2>
+            <ul>
+                <li><strong>Web:</strong> Le socket sono alla base del funzionamento di HTTP/HTTPS per la navigazione web.</li>
+                <li><strong>Giochi online:</strong> Consentono la comunicazione in tempo reale tra giocatori.</li>
+                <li><strong>Streaming:</strong> Le socket UDP vengono spesso utilizzate per trasmettere dati multimediali.</li>
+                <li><strong>Sicurezza:</strong> Strumenti come Wireshark utilizzano le socket per catturare e analizzare i pacchetti di rete.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Davide Aggio - Classe 5F</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

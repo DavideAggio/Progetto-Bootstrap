@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modello OSI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="img/icon.png">  
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-plug"></i> Socket Guide
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="socket.html">Socket</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="osi.html">Modello OSI</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tcp_udp.html">TCP/UDP</a></li>
+                    <li class="nav-item"><a class="nav-link" href="glossario.html">Glossario</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenuto -->
+    <div class="container my-5">
+        <h1>Modello OSI</h1>
+
+        <!-- Introduzione -->
+        <div class="section">
+            <h2>Introduzione al Modello OSI</h2>
+            <p>Il modello OSI (Open Systems Interconnection) è uno standard creato dall'ISO (International Organization for Standardization) per descrivere come i dati vengono trasmessi attraverso una rete. È composto da 7 livelli, ognuno con una funzione specifica, e viene utilizzato come riferimento per comprendere e progettare architetture di rete.</p>
+            <p>Il modello OSI consente l'interoperabilità tra dispositivi e protocolli di diversi produttori, offrendo un framework teorico che separa le diverse responsabilità della comunicazione in rete. I suoi sette livelli sono:</p>
+            <ul>
+                <li><strong>Livello 1:</strong> Fisico</li>
+                <li><strong>Livello 2:</strong> Data Link (Collegamento dati)</li>
+                <li><strong>Livello 3:</strong> Rete</li>
+                <li><strong>Livello 4:</strong> Trasporto</li>
+                <li><strong>Livello 5:</strong> Sessione</li>
+                <li><strong>Livello 6:</strong> Presentazione</li>
+                <li><strong>Livello 7:</strong> Applicazione</li>
+            </ul>
+            <p>Fonti: <a href="https://www.ibm.com/docs/en/aix/7.2?topic=concepts-tcpip" target="_blank">IBM - OSI Model Overview</a>, <a href="https://www.geeksforgeeks.org/layers-of-osi-model/" target="_blank">GeeksforGeeks - OSI Model</a>.</p>
+        </div>
+
+        <!-- Dettaglio sul livello 4 -->
+        <div class="section">
+            <h2>Il Livello 4: Trasporto</h2>
+            <p>Il livello di trasporto del modello OSI è responsabile della consegna affidabile dei dati da un punto A a un punto B nella rete. È qui che vengono implementati i protocolli come TCP (Transmission Control Protocol) e UDP (User Datagram Protocol), che offrono servizi diversi in base alle esigenze dell'applicazione.</p>
+
+            <h3>Funzioni principali del livello di trasporto</h3>
+            <ul>
+                <li><strong>Multiplexing e Demultiplexing:</strong> Il livello di trasporto gestisce più connessioni contemporaneamente, assegnando un numero di porta unico a ciascuna applicazione per distinguere i flussi di dati.</li>
+                <li><strong>Affidabilità:</strong> Con il protocollo TCP, il livello di trasporto garantisce che i dati arrivino correttamente e nell'ordine previsto, utilizzando meccanismi come ritrasmissioni e controlli di errore.</li>
+                <li><strong>Controllo del flusso:</strong> Regola la velocità di trasmissione per evitare che il destinatario venga sovraccaricato.</li>
+                <li><strong>Controllo della congestione:</strong> Adatta la velocità di trasmissione in base alle condizioni della rete per prevenire congestioni.</li>
+            </ul>
+
+            <h3>Protocollo TCP</h3>
+            <p>Il TCP è un protocollo orientato alla connessione che offre servizi di trasmissione dati affidabili. Prima di trasferire dati, stabilisce una connessione attraverso un processo chiamato "three-way handshake". Questo garantisce che entrambe le parti siano pronte a comunicare.</p>
+
+            <h3>Protocollo UDP</h3>
+            <p>L'UDP è un protocollo senza connessione, più veloce e leggero rispetto al TCP. Non fornisce meccanismi per la consegna affidabile, ma è ideale per applicazioni in tempo reale come streaming e giochi online.</p>
+
+            <p>Fonti: <a href="https://developer.mozilla.org/en-US/docs/Web/API/UDPSocket" target="_blank">MDN - UDP Socket</a>, <a href="https://www.cisco.com/c/en/us/support/docs/ip/transmission-control-protocol-tcp/14111-what-is-tcp.html" target="_blank">Cisco - TCP Protocol</a>.</p>
+        </div>
+
+        <!-- Conclusione -->
+        <div class="section">
+            <h2>Conclusioni</h2>
+            <p>Il modello OSI e il livello di trasporto sono fondamentali per comprendere come i dati vengono trasmessi in rete. Questo livello funge da ponte tra le applicazioni e la rete fisica, garantendo che i dati vengano consegnati in modo affidabile e corretto, o ottimizzando la velocità quando l'affidabilità non è una priorità.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Davide Aggio - Classe 5F</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

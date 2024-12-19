@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="img/icon.png">  
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-plug"></i> Socket Guide
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="socket.html">Socket</a></li>
+                    <li class="nav-item"><a class="nav-link" href="osi.html">Modello OSI</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tcp_udp.html">TCP/UDP</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="glossario.html">Glossario</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenuto -->
+    <div class="container my-5">
+        <h1>Glossario</h1>
+        <p>In questa pagina trovi una raccolta dei termini tecnici utilizzati nel sito, con definizioni concise e link alle pagine o sezioni pertinenti per approfondire ogni concetto.</p>
+        <ul class="list-group">
+            <!-- Termine: Socket -->
+            <li class="section">
+                <strong>Socket:</strong> Un punto finale per la comunicazione tra due dispositivi su una rete. Per saperne di più, visita la pagina <a href="socket.html">Socket</a>.
+            </li>
+
+            <!-- Termine: Client -->
+            <li class="section">
+                <strong>Client:</strong> Un dispositivo o un'applicazione che invia richieste a un server per accedere a risorse o servizi. Maggiori dettagli nella sezione <a href="socket.html#processo-di-comunicazione-server-e-client">Processo di comunicazione</a>.
+            </li>
+
+            <!-- Termine: Server -->
+            <li class="section">
+                <strong>Server:</strong> Un dispositivo o un'applicazione che fornisce risorse o servizi in risposta alle richieste del client. Scopri di più nella sezione <a href="socket.html#processo-di-comunicazione-server-e-client">Processo di comunicazione</a>.
+            </li>
+
+            <!-- Termine: TCP -->
+            <li class="section">
+                <strong>TCP (Transmission Control Protocol):</strong> Un protocollo orientato alla connessione che garantisce una trasmissione affidabile dei dati. Maggiori informazioni nella pagina <a href="tcp_udp.html#tcp">TCP/UDP</a>.
+            </li>
+
+            <!-- Termine: UDP -->
+            <li class="section">
+                <strong>UDP (User Datagram Protocol):</strong> Un protocollo senza connessione che consente una trasmissione rapida ma non garantisce l'affidabilità dei dati. Dettagli disponibili nella pagina <a href="tcp_udp.html#udp">TCP/UDP</a>.
+            </li>
+
+            <!-- Termine: Modello OSI -->
+            <li class="section">
+                <strong>Modello OSI:</strong> Un modello di riferimento che divide le comunicazioni di rete in sette livelli. Per ulteriori informazioni, consulta la pagina <a href="osi.html">Modello OSI</a>.
+            </li>
+
+            <!-- Termine: Indirizzo IP -->
+            <li class="section">
+                <strong>Indirizzo IP:</strong> Un identificatore unico per dispositivi su una rete. Utilizzato per instradare i dati al dispositivo corretto. Maggiori dettagli nella pagina <a href="osi.html#livello-rete">Modello OSI</a>.
+            </li>
+
+            <!-- Termine: Porta -->
+            <li class="section">
+                <strong>Porta:</strong> Un numero che identifica in modo univoco un processo o un'applicazione in esecuzione su un dispositivo. Usato insieme all'indirizzo IP per identificare una socket.
+            </li>
+
+            <!-- Termine: Comunicazione Client-Server -->
+            <li class="section">
+                <strong>Comunicazione Client-Server:</strong> Un modello in cui il client invia richieste e il server fornisce risposte. Dettagli nella sezione <a href="socket.html#processo-di-comunicazione-server-e-client">Processo di comunicazione</a>.
+            </li>
+
+            <!-- Termine: Protocollo -->
+            <li class="section">
+                <strong>Protocollo:</strong> Un insieme di regole che definiscono come i dati vengono trasmessi e ricevuti su una rete. Maggiori dettagli nella pagina <a href="tcp_udp.html">TCP/UDP</a>.
+            </li>
+        </ul>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Davide Aggio - Classe 5F</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
